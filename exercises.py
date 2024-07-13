@@ -19,3 +19,15 @@ def is_permutation(str1:str,str2:str) ->bool:
     
 print(is_permutation("dog","god"))
 print(is_permutation("cow","wocc"))
+
+#1.3 Option 1: Replace with 20%
+def replace_with_20(s:str) ->str:
+    
+    return s.replace(' ','%20')    
+
+print(replace_with_20("tomorrow soccer"))
+
+#1.3 Option 2: Replace with %20 pending 
+# def replace_with_20v2(s:str)->str:
+
+
