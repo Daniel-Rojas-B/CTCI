@@ -48,6 +48,43 @@ def is_palindrome_permutation(s:str)->bool:
 print(is_palindrome_permutation("tact coa"))
 print(is_palindrome_permutation("am layi la m"))
 
+#1.5 One Way: given two strings determine if they are one edit or zero edits away to be equal
 
+def oneEditAway(s1:str,s2:str):
+    if(len(s1)==len(s2)):
+        return oneEditReplace(s1,s2)
+    elif(len(s1)+1==len(s2)):
+        return oneEditInsert(s1,s2)
+    elif(len(s1)-1==len(s2)):
+        return oneEditInsert(s1,s2)
+    return False
 
+def oneEditReplace(s1:str,s2:str):
+    foundDifference = False
+    for i in range(len(s1)):
+        
+        if(s1[i]!=s2[i]):
+            if (foundDifference):
+                return False
+            foundDifference= True
+    return True
 
+def oneEditInsert(s1:str,s2:str):
+    index1=0
+    index2=0
+    while(index2<len(s2) and index1<len(s1)):
+        if(s1[index1]!=s2[index2]):
+            if(index1!=index2):
+                return False
+            index2+=1
+        else:
+            index1+=1
+            index2+=1
+    return True         
+        
+
+print(oneEditReplace("pale","ple"))
+print(oneEditInsert("pale","ple"))
+print(oneEditAway("pale","ple"))
+
+#1.6
