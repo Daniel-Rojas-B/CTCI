@@ -101,7 +101,9 @@ def compressed_string(s:str):
             compressed_string+=s[i]+str(counter)
             print(s[i])
             counter = 1
-        
+    if s_length > 0:
+        compressed_string += s[-1] + str(counter)
+        print(s[-1])
     return compressed_string
 
-print(compressed_string('abbbc'))
+print(compressed_string('aabccc'))
