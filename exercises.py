@@ -87,4 +87,21 @@ print(oneEditReplace("pale","ple"))
 print(oneEditInsert("pale","ple"))
 print(oneEditAway("pale","ple"))
 
-#1.6
+#1.6 Compressed String
+
+def compressed_string(s:str):
+    compressed_string=''
+    counter = 1
+    s_length=len(s)
+    print(s_length)
+    for i in range(s_length-1):
+        if s[i]==s[i+1]:
+            counter+=1
+        else:
+            compressed_string+=s[i]+str(counter)
+            print(s[i])
+            counter = 1
+        
+    return compressed_string
+
+print(compressed_string('abbbc'))
